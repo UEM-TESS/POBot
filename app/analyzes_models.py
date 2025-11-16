@@ -24,10 +24,10 @@ def main():
         transcription = file_utils.read_file(interview_file)
 
         analyze_model(const.Models.QWEN_25_7B, interview_file, transcription)
-        analyze_model(const.Models.QWEN_2_5_3B, interview_file, transcription)
-        analyze_model(const.Models.PHI_4_3B, interview_file, transcription)
-        analyze_model(const.Models.META_LLAMA_3_1_8B, interview_file, transcription)
-        analyze_model(const.Models.META_LLAMA_3_2_1B, interview_file, transcription)
-        analyze_model(const.Models.META_LLAMA_3_2_3B, interview_file, transcription)
+        # analyze_model(const.Models.QWEN_2_5_3B, interview_file, transcription)
+        # analyze_model(const.Models.PHI_4_3B, interview_file, transcription)
+        # analyze_model(const.Models.META_LLAMA_3_1_8B, interview_file, transcription)
+        # analyze_model(const.Models.META_LLAMA_3_2_1B, interview_file, transcription)
+        # analyze_model(const.Models.META_LLAMA_3_2_3B, interview_file, transcription)
 
     logger.log(f"💾 Processo concluído.")
