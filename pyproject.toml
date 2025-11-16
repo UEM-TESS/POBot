@@ -1,0 +1,47 @@
+[project]
+name = "pobot"
+version = "1.0.0"
+description = "Generator Users Stories"
+authors = [
+    { name = "Leonardo Cavalcante", email = "leonardo.cavalcante@elotech.com.br" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "openai>=2.8.0,<3.0.0",
+    "python-dotenv>=1.2.1,<2.0.0",
+    "psycopg2-binary (>=2.9.11,<3.0.0)"
+]
+
+# --------------------------------------
+# POETRY PACKAGES (IMPORTANT!)
+# --------------------------------------
+# Esta seção garante que Poetry reconheça
+# suas pastas como módulos Python válidos.
+# --------------------------------------
+[tool.poetry]
+packages = [
+    { include = "app" },
+    { include = "common" }
+]
+
+# --------------------------------------
+# SCRIPTS CLI (Opcional, mas útil)
+# Agora você pode rodar: poetry run analyze-models
+# --------------------------------------
+[tool.poetry.scripts]
+analyze-models = "app.analyzes_models:main"
+
+# --------------------------------------
+# SISTEMA DE BUILD
+# --------------------------------------
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.1,<10.0.0)"
+]
