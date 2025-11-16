@@ -16,7 +16,7 @@ connection = psycopg2.connect(
 
 def insert_interview(description: str, transcription: str, total_chuncks: int, size_chunks: int):
     id_interview = str(uuid.uuid4())
-    sql = "insert into interview(id, description,datetime,content,language,total_chuncks,size_chunks) values(%s,%s,current_timestamp,%s,'PT-BR',%s,%s)"
+    sql = "insert into interview(id, description,datetime,content,language,total_chunks,size_chunks) values(%s,%s,current_timestamp,%s,'PT-BR',%s,%s)"
     valores = (id_interview, description, transcription, total_chuncks, size_chunks)
     cursor = connection.cursor()
     cursor.execute(sql, valores)
@@ -53,7 +53,7 @@ def insert_story(interview_model_id: int, stories):
 
 
 def save_result(interview_title: str, interview_description: str, model_name: str, tokens_max: int,
-                temperature: float, chunks: int, chunk_size: int, data_stories: dict, elapsed_seconds):
+                temperature: float, chunks: int, chunk_size: int, data_stories: dict, elapsed_seconds: float):
     id_interview = insert_interview(interview_title, interview_description, chunks, chunk_size)
     id_model_interview = insert_interview_model(id_interview, model_name, tokens_max, temperature, elapsed_seconds)
     stories = data_stories.get("stories", [])

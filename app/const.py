@@ -42,9 +42,9 @@ class Models(Enum):
     )
 
 
-INTERVIEWS_FILES = ["./resources/interviews/teste.txt"
-                    #   ,"./resources/interviews/sistema_gestao_clinica_veterinaria.txt",
-                    #   ,"./resources/interviews/sistema_telemarketing.txt"
+INTERVIEWS_FILES = ["./resources/interviews/sistema_empresa_financeira_agropecuaria.txt"
+    , "./resources/interviews/sistema_gestao_clinica_veterinaria.txt"
+    , "./resources/interviews/sistema_telemarketing.txt"
                     ]
 
 SYSTEM_PROMPT = """

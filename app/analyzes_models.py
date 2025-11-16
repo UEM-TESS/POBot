@@ -14,7 +14,7 @@ def analyze_model(model: const.Models, interview_file: str, transcription: str):
     end = time.perf_counter()
     elapsed_seconds = end - start
     interview_repository.save_result(interview_file, transcription, const.Models.QWEN_25_7B.name,
-                                     4096, 0.5, chunk_size, data_stories, elapsed_seconds)
+                                     4096, 0.5, chunks_count, chunk_size, data_stories, elapsed_seconds)
     logger.log(f"Fim modelo")
     logger.log(f"=======================================")
 
